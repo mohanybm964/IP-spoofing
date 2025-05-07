@@ -1,0 +1,159 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.25a
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema ipspoof
+--
+
+CREATE DATABASE IF NOT EXISTS ipspoof;
+USE ipspoof;
+
+--
+-- Definition of table `request`
+--
+
+DROP TABLE IF EXISTS `request`;
+CREATE TABLE `request` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) DEFAULT NULL,
+  `fkey` varchar(45) DEFAULT NULL,
+  `fcateg` varchar(45) DEFAULT NULL,
+  `fprior` varchar(45) DEFAULT NULL,
+  `uname` varchar(45) DEFAULT NULL,
+  `ipadd` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `request`
+--
+
+/*!40000 ALTER TABLE `request` DISABLE KEYS */;
+/*!40000 ALTER TABLE `request` ENABLE KEYS */;
+
+
+--
+-- Definition of table `respons`
+--
+
+DROP TABLE IF EXISTS `respons`;
+CREATE TABLE `respons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) DEFAULT NULL,
+  `fkey` varchar(45) DEFAULT NULL,
+  `fcate` varchar(45) DEFAULT NULL,
+  `fprior` varchar(45) DEFAULT NULL,
+  `uname` varchar(45) DEFAULT NULL,
+  `ipadd` varchar(45) DEFAULT NULL,
+  `fkeyqr` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `respons`
+--
+
+/*!40000 ALTER TABLE `respons` DISABLE KEYS */;
+/*!40000 ALTER TABLE `respons` ENABLE KEYS */;
+
+
+--
+-- Definition of table `upload`
+--
+
+DROP TABLE IF EXISTS `upload`;
+CREATE TABLE `upload` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) DEFAULT NULL,
+  `fkey` varchar(45) DEFAULT NULL,
+  `categ` varchar(45) DEFAULT NULL,
+  `file` varchar(45) DEFAULT NULL,
+  `prior` varchar(45) DEFAULT NULL,
+  `descript` varchar(45) DEFAULT NULL,
+  `encrypt` longtext,
+  `decrypt` longtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `upload`
+--
+
+/*!40000 ALTER TABLE `upload` DISABLE KEYS */;
+/*!40000 ALTER TABLE `upload` ENABLE KEYS */;
+
+
+--
+-- Definition of table `upload2`
+--
+
+DROP TABLE IF EXISTS `upload2`;
+CREATE TABLE `upload2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(45) DEFAULT NULL,
+  `filetype` varchar(45) DEFAULT NULL,
+  `filekey` varchar(45) DEFAULT NULL,
+  `filesize` varchar(45) DEFAULT NULL,
+  `filecontent` longtext,
+  `encrypt` longtext,
+  `decrypt` longtext,
+  `categ` varchar(45) DEFAULT NULL,
+  `priority` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `upload2`
+--
+
+/*!40000 ALTER TABLE `upload2` DISABLE KEYS */;
+INSERT INTO `upload2` (`id`,`filename`,`filetype`,`filekey`,`filesize`,`filecontent`,`encrypt`,`decrypt`,`categ`,`priority`) VALUES 
+ (15,'b6.pdf','application/pdf','DB388','357528','DOI: 10.18535/ijecs/v6i4.09 \n \n[26] E. Stefanov, M. van Dijk, A. Juels, and A. [37] B. Wang, B. Li, and H. Li, “Public auditing \nOprea, “Iris: A scalable cloud ?le system with for shared data with ef?cient user revocation in \nef?cient integrity checks,” in Proc. of ACSAC, the cloud,” in Proc. of INFOCOM, pp. 2904–\npp. 229–238, 2012.  2912, 2013.  \n[27] D. Cash, A. Ku¨pc¸u¨, and D. Wichs, [38] B. Wang, B. Li, and H. Li, “Oruta: privacy-\n“Dynamic proofs of retrievability via oblivious preserving public auditing for shared data in the \nRAM,” in Proc. of EUROCRYPT, pp. 279–295, cloud,” IEEE Transactions on Cloud Computing, \n2013. vol. 2, no. 1, pp. 43–56, 2014.  \n[28] M. Azraoui, K. Elkhiyaoui, R.Molva, and M. [39] J. Yuan and S. Yu, “Ef?cient public integrity \n¨Onen, “StealthGuard: Proofs of Retrievability checking for cloud data sharing with multi-user \nwith Hidden Watchdogs,” in Proc. of ESORICS, modi?cation,” in Proc. of INFOCOM, pp. 2121–\npp. 239–256, 2014.  2129, 2014.  \n[29] Z. Ren, L. Wang, Q. Wang, and M. Xu, [40] R. Gennaro and D. Wichs, “Fully \n“Dynamic Proofs of Retrievability for Coded Homomorphic Message Authenticators,” in Proc. \nCloud Storage Systems,” IEEE Transactions on of ASIACRYPT, pp. 301–320, 2013.  \nServices Computing, vol. PP, no. 99, pp. 1–1, \n[41] D. Boneh and D. M. Freeman, \n2015.  \n“Homomorphic Signatures for Polynomial \n[30] R. Di Pietro and A. Sorniotti, “Boosting Functions,” in Proc. of EUROCRYPT, pp. 149–\nEf?ciency and Security in Proof of Ownership for 168, 2011.  \nDeduplication,” in Proc. of ASIACCS, pp. 81–90, \n[42] D. Catalano, D. Fiore, and B. Warinschi, \n2012.  \n“Homomorphic Signatures with Ef?cient \n[31] J. Xu, E.-C. Chang, and J. Zhou, “Weak Veri?cation for Polynomial Functions,” in Proc. \nleakage-resilient clientside deduplication of of CRYPTO, pp. 371–389, 2014.  \nencrypted data in cloud storage,” in Proc. of \n[43] A. Yun, J. H. Cheon, and Y. Kim, “On \nASIACCS, pp. 195–206, 2013.  \nHomomorphic Signatures for Network Coding,” \n[32] S. Keelveedhi, M. Bellare, and T. Ristenpart, IEEE Transactions on Computers, vol. 59, no. 9, \n“DupLESS: Serveraided encryption for pp. 1295–1296, 2010.  \ndeduplicated storage,” in Proc. of USENIX \n[44] C. Cheng and T. Jiang, “An Ef?cient \nSecurity, pp. 179–194, 2013.  \nHomomorphic MAC with Small Key Size for \n[33] J. Li, X. Chen, M. Li, J. Li, P. Lee, and W. Authentication in Network Coding,” IEEE \nLou, “Secure Deduplication with Ef?cient and Transactions on Computers, vol. 62, no. 10, pp. \nReliable Convergent Key Management,” IEEE 2096–2100, 2013.  \nTransactions on Parallel and Distributed Systems, \n[45] J. Chen, K. He, R. Du, M. Zheng, Y. Xiang, \nvol. 25, no. 6, pp. 1615–1625, 2014.  \nand Q. Yuan, “Dominating Set and Network \n[34] J. Li, Y. K. Li, X. Chen, P. Lee, and W. Lou, Coding-Based Routing in Wireless Mesh \n“A Hybrid Cloud Approach for Secure Authorized Networks,” IEEE Transactions on Parallel and \nDeduplication,” IEEE Transactions on Parallel Distributed Systems, vol. 26, no. 2, pp. 423–433, \nand Distributed Systems, vol. 26, no. 5, pp. 1206– 2015.  \n1216, 2015.  \n[46] D. Catalano, “Homomorphic Signatures and \n[35] Q. Zheng and S. Xu, “Secure and ef?cient Message Authentication Codes,” in Proc. of SCN, \nproof of storage with deduplication,” in Proc. of pp. 514–519, 2014.  \nCODASPY, pp. 1–12, 2012.  \n[47] M. Bellare, S. Keelveedhi, and T. Ristenpart, \n[36] R. Du, L. Deng, J. Chen, K. He, and M. “Message-locked encryption and secure \nZheng, “Proofs of ownership and retrievability in deduplication,” in Proc. of EUROCRYPT, pp. \ncloud storage,” in Proc. of TrustCom, pp. 328– 296–312, 2013.  \n335, 2014.  \nProf.Ashok Kalal, IJECS Volume 6 Issue 4 April, 2017 Page No. 20851-20858 Page 20857 ','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\r\ntU1I55eIV/OOAl4zCf6ZNVTbMcrbdcw=','DOI: 10.18535/ijecs/v6i4.09 \n \n[26] E. Stefanov, M. van Dijk, A. Juels, and A. [37] B. Wang, B. Li, and H. Li, “Public auditing \nOprea, “Iris: A scalable cloud ?le system with for shared data with ef?cient user revocation in \nef?cient integrity checks,” in Proc. of ACSAC, the cloud,” in Proc. of INFOCOM, pp. 2904–\npp. 229–238, 2012.  2912, 2013.  \n[27] D. Cash, A. Ku¨pc¸u¨, and D. Wichs, [38] B. Wang, B. Li, and H. Li, “Oruta: privacy-\n“Dynamic proofs of retrievability via oblivious preserving public auditing for shared data in the \nRAM,” in Proc. of EUROCRYPT, pp. 279–295, cloud,” IEEE Transactions on Cloud Computing, \n2013. vol. 2, no. 1, pp. 43–56, 2014.  \n[28] M. Azraoui, K. Elkhiyaoui, R.Molva, and M. [39] J. Yuan and S. Yu, “Ef?cient public integrity \n¨Onen, “StealthGuard: Proofs of Retrievability checking for cloud data sharing with multi-user \nwith Hidden Watchdogs,” in Proc. of ESORICS, modi?cation,” in Proc. of INFOCOM, pp. 2121–\npp. 239–256, 2014.  2129, 2014.  \n[29] Z. Ren, L. Wang, Q. Wang, and M. Xu, [40] R. Gennaro and D. Wichs, “Fully \n“Dynamic Proofs of Retrievability for Coded Homomorphic Message Authenticators,” in Proc. \nCloud Storage Systems,” IEEE Transactions on of ASIACRYPT, pp. 301–320, 2013.  \nServices Computing, vol. PP, no. 99, pp. 1–1, \n[41] D. Boneh and D. M. Freeman, \n2015.  \n“Homomorphic Signatures for Polynomial \n[30] R. Di Pietro and A. Sorniotti, “Boosting Functions,” in Proc. of EUROCRYPT, pp. 149–\nEf?ciency and Security in Proof of Ownership for 168, 2011.  \nDeduplication,” in Proc. of ASIACCS, pp. 81–90, \n[42] D. Catalano, D. Fiore, and B. Warinschi, \n2012.  \n“Homomorphic Signatures with Ef?cient \n[31] J. Xu, E.-C. Chang, and J. Zhou, “Weak Veri?cation for Polynomial Functions,” in Proc. \nleakage-resilient clientside deduplication of of CRYPTO, pp. 371–389, 2014.  \nencrypted data in cloud storage,” in Proc. of \n[43] A. Yun, J. H. Cheon, and Y. Kim, “On \nASIACCS, pp. 195–206, 2013.  \nHomomorphic Signatures for Network Coding,” \n[32] S. Keelveedhi, M. Bellare, and T. Ristenpart, IEEE Transactions on Computers, vol. 59, no. 9, \n“DupLESS: Serveraided encryption for pp. 1295–1296, 2010.  \ndeduplicated storage,” in Proc. of USENIX \n[44] C. Cheng and T. Jiang, “An Ef?cient \nSecurity, pp. 179–194, 2013.  \nHomomorphic MAC with Small Key Size for \n[33] J. Li, X. Chen, M. Li, J. Li, P. Lee, and W. Authentication in Network Coding,” IEEE \nLou, “Secure Deduplication with Ef?cient and Transactions on Computers, vol. 62, no. 10, pp. \nReliable Convergent Key Management,” IEEE 2096–2100, 2013.  \nTransactions on Parallel and Distributed Systems, \n[45] J. Chen, K. He, R. Du, M. Zheng, Y. Xiang, \nvol. 25, no. 6, pp. 1615–1625, 2014.  \nand Q. Yuan, “Dominating Set and Network \n[34] J. Li, Y. K. Li, X. Chen, P. Lee, and W. Lou, Coding-Based Routing in Wireless Mesh \n“A Hybrid Cloud Approach for Secure Authorized Networks,” IEEE Transactions on Parallel and \nDeduplication,” IEEE Transactions on Parallel Distributed Systems, vol. 26, no. 2, pp. 423–433, \nand Distributed Systems, vol. 26, no. 5, pp. 1206– 2015.  \n1216, 2015.  \n[46] D. Catalano, “Homomorphic Signatures and \n[35] Q. Zheng and S. Xu, “Secure and ef?cient Message Authentication Codes,” in Proc. of SCN, \nproof of storage with deduplication,” in Proc. of pp. 514–519, 2014.  \nCODASPY, pp. 1–12, 2012.  \n[47] M. Bellare, S. Keelveedhi, and T. Ristenpart, \n[36] R. Du, L. Deng, J. Chen, K. He, and M. “Message-locked encryption and secure \nZheng, “Proofs of ownership and retrievability in deduplication,” in Proc. of EUROCRYPT, pp. \ncloud storage,” in Proc. of TrustCom, pp. 328– 296–312, 2013.  \n335, 2014.  \nProf.Ashok Kalal, IJECS Volume 6 Issue 4 April, 2017 Page No. 20851-20858 Page 20857 ','insurance','high');
+/*!40000 ALTER TABLE `upload2` ENABLE KEYS */;
+
+
+--
+-- Definition of table `userregistertbl`
+--
+
+DROP TABLE IF EXISTS `userregistertbl`;
+CREATE TABLE `userregistertbl` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `phno` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `pass` varchar(45) DEFAULT NULL,
+  `ipaddno` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userregistertbl`
+--
+
+/*!40000 ALTER TABLE `userregistertbl` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userregistertbl` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
